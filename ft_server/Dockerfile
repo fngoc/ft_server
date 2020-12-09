@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Dockerfile                                         :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: fngoc <fngoc@student.42.fr>                +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2020/12/09 20:02:15 by fngoc             #+#    #+#              #
+#    Updated: 2020/12/09 20:02:21 by fngoc            ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 # Установка контейнерной OS
 FROM debian:buster
 
@@ -40,7 +52,6 @@ RUN chown -R www-data:www-data /var/www/server/wordpress
 WORKDIR /var/www/server/wordpress
 COPY ./srcs/wp-config.php .
 
-# WORKDIR /
 # Копирование autoindex.sh
 COPY ./srcs/autoindex.sh ./
 
