@@ -40,8 +40,9 @@ RUN chown -R www-data:www-data /var/www/server/wordpress
 WORKDIR /var/www/server/wordpress
 COPY ./srcs/wp-config.php .
 
-WORKDIR /
-COPY ./srcs/autoindex.sh .
+# WORKDIR /
+# Копирование autoindex.sh
+COPY ./srcs/autoindex.sh ./
 
 # Установка php-myadmin
 RUN wget https://files.phpmyadmin.net/phpMyAdmin/5.0.4/phpMyAdmin-5.0.4-all-languages.tar.gz
@@ -50,18 +51,16 @@ RUN rm -rf phpMyAdmin-5.0.4-all-languages.tar.gz
 RUN mv phpMyAdmin-5.0.4-all-languages/ /var/www/server/phpmyadmin
 COPY ./srcs/config.inc.php /var/www/server/phpmyadmin
 
-#Скрипт устанавливающий ssl
-COPY ./srcs/ssl.sh .
-RUN bash ssl.sh
-RUN rm -rf ssl.sh
+#Устанавливаем ssl
+RUN openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/nginx-selfsigned.key -out /etc/ssl/certs/nginx-selfsigned.crt  -subj "/C=RU/ST=Kazan/L=Kazan/O=21/OU=21School/CN=localhost"
 
 # Инициализация database    
 COPY ./srcs/db.sh .
 RUN bash db.sh
 RUN rm -rf db.sh
 
-WORKDIR /
-COPY ./srcs/init.sh .
+# Копирование init.sh
+COPY ./srcs/init.sh ./
 
 # Открытие портов (не обязательно)
 EXPOSE 80 443
