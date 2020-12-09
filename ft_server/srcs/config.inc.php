@@ -9,13 +9,13 @@
  *
  * @package PhpMyAdmin
  */
-declare(strict_types=1);
+//declare(strict_types=1);
 
 /**
  * This is needed for cookie based authentication to encrypt password in
  * cookie. Needs to be 32 chars long.
  */
-$cfg['blowfish_secret'] = '0987654321'; /* YOU MUST FILL IN THIS FOR COOKIE AUTH! */
+$cfg['blowfish_secret'] = ''; /* YOU MUST FILL IN THIS FOR COOKIE AUTH! */
 
 /**
  * Servers configuration
@@ -32,6 +32,8 @@ $cfg['Servers'][$i]['auth_type'] = 'cookie';
 $cfg['Servers'][$i]['host'] = 'localhost';
 $cfg['Servers'][$i]['compress'] = false;
 $cfg['Servers'][$i]['AllowNoPassword'] = true;
+$cfg['blowfish_secret'] = 'fngoc0123456789fngoc';
+$cfg['TempDir'] = '/tmp';
 
 /**
  * phpMyAdmin configuration storage settings.
@@ -114,7 +116,7 @@ $cfg['SaveDir'] = '';
  * uncomment the desired line:
  * default = 'en'
  */
-//$cfg['DefaultLang'] = 'en';
+$cfg['DefaultLang'] = 'ru';
 //$cfg['DefaultLang'] = 'de';
 
 /**
