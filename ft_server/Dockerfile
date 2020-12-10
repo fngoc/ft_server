@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Dockerfile                                         :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: fngoc <fngoc@student.42.fr>                +#+  +:+       +#+         #
+#    By: vitmarkha <vitmarkha@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/09 20:02:15 by fngoc             #+#    #+#              #
-#    Updated: 2020/12/09 20:02:21 by fngoc            ###   ########.fr        #
+#    Updated: 2020/12/10 11:37:17 by vitmarkha        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,11 +64,6 @@ COPY ./srcs/config.inc.php /var/www/server/phpmyadmin
 
 #Устанавливаем ssl
 RUN openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/nginx-selfsigned.key -out /etc/ssl/certs/nginx-selfsigned.crt  -subj "/C=RU/ST=Kazan/L=Kazan/O=21/OU=21School/CN=localhost"
-
-# Инициализация database    
-COPY ./srcs/db.sh .
-RUN bash db.sh
-RUN rm -rf db.sh
 
 # Копирование init.sh
 COPY ./srcs/init.sh ./
