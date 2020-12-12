@@ -32,4 +32,4 @@ ft_server - пятый проект в School 21. Этот проект приз
 
 ## Оценка
 
-![alt tag](media/appraisal_ft_server.png "Оценка проекта ft_printf")
+![alt tag](media/appraisal_ft_server.png "Оценка проекта ft_server")
