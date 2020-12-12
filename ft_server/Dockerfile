@@ -33,8 +33,7 @@ RUN apt-get -y install wget \
                         php-xmlrpc \
                         php-xml \
                         php-soap \
-                        php-intl \
-                        php-curl
+                        php-intl 
 
 # Задаем рабочую директорию
 WORKDIR /etc/nginx/sites-available/
@@ -43,7 +42,7 @@ WORKDIR /etc/nginx/sites-available/
 COPY ./srcs/nginx.conf /etc/nginx/sites-available/nginx.conf
 RUN ln -s /etc/nginx/sites-available/nginx.conf /etc/nginx/sites-enabled
 
-# Создание сервера
+# Установка wordpress
 WORKDIR /var/www/server
 RUN wget https://wordpress.org/latest.tar.gz
 RUN tar -xzvf latest.tar.gz
@@ -51,9 +50,6 @@ RUN rm -rf latest.tar.gz
 RUN chown -R www-data:www-data /var/www/server/wordpress
 WORKDIR /var/www/server/wordpress
 COPY ./srcs/wp-config.php .
-
-# Копирование autoindex.sh
-COPY ./srcs/autoindex.sh ./
 
 # Установка php-myadmin
 RUN wget https://files.phpmyadmin.net/phpMyAdmin/5.0.4/phpMyAdmin-5.0.4-all-languages.tar.gz
