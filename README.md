@@ -1,10 +1,10 @@
 # ft_server
 
-## Описание
+## Description
 
-Этот проект призван познакомить нас с основами системного и сетевого администрирования. Это позволит нам установить веб-сервер, используя технологию развертывания под названием Docker.
+Installing a web server using Docker deployment technology.
 
-## Полезные ссылки
+## Useful links
 
 [Nginx](https://nginx.org/ru/docs/beginners_guide.html#control)
 
@@ -20,16 +20,14 @@
 
 [Docker №3](https://www.youtube.com/watch?v=Sa7uOGczoHc)
 
-[Краткое руководство](https://forhjy.medium.com/how-to-install-lemp-wordpress-on-debian-buster-by-using-dockerfile-1-75ddf3ede861)
+[Quick Start Guide](https://forhjy.medium.com/how-to-install-lemp-wordpress-on-debian-buster-by-using-dockerfile-1-75ddf3ede861)
 
-## Использование
+## Using
 
-Сборка сервера
-``docker build -t server .``
+Building the server ``docker build -t server .``
 
-Запуск сервера
-``docker run -it --rm -p 80:80 -p 443:443 server``
+Starting the server ``docker run -it --rm -p 80:80 -p 443:443 server``
 
-## Оценка
+## Evaluation
 
-![alt tag](media/appraisal_ft_server.png "Оценка проекта ft_server")
+![alt tag](media/appraisal_ft_server.png "Appraisal ft_server")
