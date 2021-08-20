@@ -27,7 +27,3 @@ Installing a web server using Docker deployment technology.
 Building the server ``docker build -t server .``
 
 Starting the server ``docker run -it --rm -p 80:80 -p 443:443 server``
-
-## Evaluation
-
-![alt tag](media/appraisal_ft_server.png "Appraisal ft_server")
