@@ -22,7 +22,7 @@ Installing a web server using Docker deployment technology.
 
 [Quick Start Guide](https://forhjy.medium.com/how-to-install-lemp-wordpress-on-debian-buster-by-using-dockerfile-1-75ddf3ede861)
 
-## Using
+## Usage
 
 Building the server ``docker build -t server .``
 
